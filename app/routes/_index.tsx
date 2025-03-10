@@ -2,6 +2,17 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { EmailIcon } from "~/shared/icons/EmailIcon";
 import { CallIcon } from "~/shared/icons/CallIcon";
+import {
+  FaHardHat,
+  FaBuilding,
+  FaPencilRuler,
+  FaTruckMoving,
+  FaTools,
+  FaHandHoldingUsd,
+} from "react-icons/fa";
+import { IconContext } from "react-icons";
+import { ServiceCard } from "~/components/ServiceCard";
+import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -25,26 +36,19 @@ export default function Index() {
       {/* Header */}
       <header
         className="w-full h-screen flex flex-col"
-        // style={{
-        //   backgroundImage: `linear-gradient(
-        //     to right,
-        //     hsl(210,10.8%,14.5%, 0.6),
-        //     hsl(210,10.8%,14.5%, 0.3),
-        //     hsl(210,10.8%,14.5%, 0.2)
-        //   ), url(${backgroundImages[4]})`,
-        //   backgroundSize: "cover",
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundPosition: "center",
-        //   width: "100%",
-        //   height: "100vh",
-        //   // height: "100%",
-        // }}
+        style={{
+          backgroundImage: `url(${backgroundImages[4]})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "100vh",
+        }}
       >
         {/* Top Bar */}
         <div
           className="w-full flex items-center justify-between gap-8
-           px-4 sm:px-8 lg:px-8 py-2 border-b-[1px] border-gray-300
-           bg-gray-50/80 z-10"
+           px-4 sm:px-8 py-2 border-b-[1px] border-gray-300 bg-gray-50/95"
         >
           <Link to="/">Mpoza Holdings</Link>
           <div className="flex items-center justify-center gap-8 z-10">
@@ -70,7 +74,7 @@ export default function Index() {
         {/* Navigation */}
         <nav
           className="w-full flex items-center justify-between gap-8
-           px-4 sm:px-8 py-2 lg:px-8 bg-yellow-200/80 z-10"
+           px-4 sm:px-8 py-2 lg:px-8 bg-yellow-200/80"
         >
           <Link to="/">Home</Link>
           <div className="flex items-center justify-center gap-4">
@@ -83,58 +87,72 @@ export default function Index() {
 
         {/* Header Content */}
         <div
-          className="flex-1 w-full flex justify-center items-center bg-green-300s
-          px-4s sm:px-8s py-2s lg:px-8s"
+          className="flex-1 w-full flex justify-center items-center
+            bg-gray-50/95"
         >
-          <div className="flex-col justify-center w-4/5s sm:w-1/2s md:w-1/3s w-full z-10">
-            <h1 className="text-3xl">
-              Building the Future, One Brick at a Time
-            </h1>
-            <h4>
-              {/* Delivering top-quality construction solutions with precision,
-              expertise, and innovation. */}
-              {/* Delivering top-quality construction solutions with unmatched
-              precision, exceptional expertise, and groundbreaking innovation.
-              Our team is committed to building durable, efficient, and
-              high-standard structures, ensuring excellence in every project we
-              undertake. */}
-              Delivering top-quality construction solutions with unmatched
-              precision, exceptional expertise, and groundbreaking innovation.
-            </h4>
-            <Link to="/contact">Contact Us</Link>
+          <div className="flex  justify-center items-center w-full px-4">
+            <div className="flex flex-col w-4/5 justify-center gap-4">
+              <h1 className="text-5xl">
+                Building the Future, One Brick at a Time
+              </h1>
+              <h4 className="text-lg">
+                Delivering top-quality construction solutions with unmatched
+                precision, exceptional expertise, and groundbreaking innovation.
+              </h4>
+              <Link
+                to="/contact"
+                className="text-lg bg-yellow-500 inline-block w-32 text-center
+                 px-4 py-2 text-white rounded-3xl"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
-          <div
-            className="flex justify-end w-full h-full bg-pink-300"
-            style={{
-              clipPath:
-                "polygon(0% 0%, 90% 0%, 90% 50%, 100% 50%, 90% 50%, 90% 100%, 0% 100%, 10% 50%)",
-            }}
-          >
-            {/* <div
-              className="border-l-[4px]s border-b-[4px]s border-yellow-500 bg-green-500  w-full h-full"
-              style={{
-                clipPath:
-                  "polygon(0% 0%, 90% 0%, 90% 50%, 100% 50%, 90% 50%, 90% 100%, 0% 100%, 10% 50%)",
-                // backgroundImage: `url(${backgroundImages[4]})`,
-                // backgroundSize: "cover",
-                // backgroundRepeat: "no-repeat",
-                // backgroundPosition: "center",
-                // width: "60vw",
-                // height: "100vh",
-              }}
-            >
-              <img
-                src={backgroundImages[4]}
-                className="object-fill bg-center w-full h-full"
-              />
-            </div> */}
+          <div className="w-full h-full bg-purple-500s py-4">
             <img
               src={backgroundImages[4]}
-              className="object-fill bg-center min-w-[60vw]s w-full h-full"
+              className="object-cover bg-center w-full h-full"
+              style={{
+                clipPath:
+                  "polygon(0% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 0% 100%, 10% 50%)",
+              }}
             />
           </div>
         </div>
       </header>
+
+      {/* services */}
+      <div
+        className="px-4 sm:px-8 py-16 flex flex-col items-center justify-center
+         text-lg gap-12 w-full"
+      >
+        <div className="w-full text-center relative bg-transparent z-20">
+          <p className="uppercase text-gray-800 font-semibold text-5xl opacity-10">
+            Our services
+          </p>
+          <p
+            className="text-yellow-700 font-semibold uppercase
+              text-center absolute top-[10px] left-0 right-0 z-0"
+          >
+            Our services
+          </p>
+        </div>
+        <div className="w-full gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {constructionServices.map((service, index) => (
+            <ServiceCard
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              content={service.content}
+            />
+          ))}
+        </div>
+      </div>
+      {/* Gallery */}
+      {/* Footer */}
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -148,4 +166,103 @@ const contacts = [
     text: "+256 763 385 894",
     icon: <CallIcon className="w-4 h-4" />,
   },
+];
+
+const constructionServices = [
+  {
+    icon: (
+      <IconContext.Provider
+        value={{
+          size: "1.4rem",
+          color: "#f8f9fa",
+        }}
+      >
+        <FaHardHat />
+      </IconContext.Provider>
+    ),
+    title: "Project Planning & Management",
+    content: `Comprehensive planning and 
+              management to ensure smooth 
+              project execution from start to finish`,
+  },
+  {
+    icon: (
+      <IconContext.Provider
+        value={{
+          size: "1.6rem",
+          color: "#f8f9fa",
+        }}
+      >
+        <FaBuilding />
+      </IconContext.Provider>
+    ),
+    title: "Commercial & Residential Construction",
+    content: `High-quality construction for 
+              commercial buildings, homes, and 
+              infrastructure projects`,
+  },
+  {
+    icon: (
+      <IconContext.Provider
+        value={{
+          size: "1.4rem",
+          color: "#f8f9fa",
+        }}
+      >
+        <FaPencilRuler />
+      </IconContext.Provider>
+    ),
+    title: "Architectural Design & Engineering",
+    content: `Expert design and engineering 
+              services to create sustainable 
+              and functional structures`,
+  },
+  {
+    icon: (
+      <IconContext.Provider
+        value={{
+          size: "1.4rem",
+          color: "#f8f9fa",
+        }}
+      >
+        <FaTruckMoving />
+      </IconContext.Provider>
+    ),
+    title: "Logistics & Material Supply",
+    content: `Efficient transportation and 
+              supply of construction materials 
+              to project sites`,
+  },
+  // {
+  //   icon: (
+  //     <IconContext.Provider
+  //       value={{
+  //         size: "1.4rem",
+  //         color: "#f8f9fa",
+  //       }}
+  //     >
+  //       <FaTools />
+  //     </IconContext.Provider>
+  //   ),
+  //   title: "Renovation & Remodeling",
+  //   content: `Transforming existing spaces
+  //             with modern renovation and
+  //             remodeling solutions`,
+  // },
+  // {
+  //   icon: (
+  //     <IconContext.Provider
+  //       value={{
+  //         size: "1.4rem",
+  //         color: "#f8f9fa",
+  //       }}
+  //     >
+  //       <FaHandHoldingUsd />
+  //     </IconContext.Provider>
+  //   ),
+  //   title: "Cost Estimation & Budgeting",
+  //   content: `Accurate cost estimation and
+  //             budget planning for construction
+  //             projects of all sizes`,
+  // },
 ];
