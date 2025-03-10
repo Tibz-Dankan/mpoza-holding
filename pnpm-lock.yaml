@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@netlify/edge-functions':
+        specifier: ^2.11.1
+        version: 2.11.1
+      '@netlify/functions':
+        specifier: ^3.0.1
+        version: 3.0.1
+      '@netlify/remix-adapter':
+        specifier: ^2.6.0
+        version: 2.6.0(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))
+      '@netlify/remix-edge-adapter':
+        specifier: ^3.4.2
+        version: 3.4.2(@remix-run/react@2.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2))(@remix-run/serve@2.16.0(typescript@5.8.2))(@remix-run/server-runtime@2.16.0(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
+      '@netlify/remix-runtime':
+        specifier: ^2.3.1
+        version: 2.3.1(@remix-run/server-runtime@2.16.0(typescript@5.8.2))
       '@remix-run/node':
         specifier: ^2.16.0
         version: 2.16.0(typescript@5.8.2)
@@ -20,6 +35,9 @@ importers:
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
+      plugin:
+        specifier: link:@netlify/remix-adapter/plugin
+        version: link:@netlify/remix-adapter/plugin
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -711,6 +729,41 @@ packages:
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
+
+  '@netlify/edge-functions@2.11.1':
+    resolution: {integrity: sha512-pyQOTZ8a+ge5lZlE+H/UAHyuqQqtL5gE0pXrHT9mOykr3YQqnkB2hZMtx12odatZ87gHg4EA+UPyMZUbLfnXvw==}
+
+  '@netlify/functions@3.0.1':
+    resolution: {integrity: sha512-KqVvGatPnn3lw80vXsFbYV3H2S9FI9TQHneFVR6BBvfHWiqTvs8NwUoBpnUWgqPKKeUMuynycDabeSi9CW2WWw==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/remix-adapter@2.6.0':
+    resolution: {integrity: sha512-zmkCfQMvy/CogwocoFCBI7NdkLqBW4xuRh0V9PVSmhTYycDbrAGWvapLtjHK85tlvml9Yc5aRNkbCLdic6JUCA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      vite: ^5.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+
+  '@netlify/remix-edge-adapter@3.4.2':
+    resolution: {integrity: sha512-zapovr1o/SecEzsrpSqsCvmT0NahhjEybm59W71LqOM9ZDvvOslUwnNtV1pqj75oJfR0xO6GYbcIwujCZj40xQ==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      vite: ^5.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+
+  '@netlify/remix-runtime@2.3.1':
+    resolution: {integrity: sha512-5gVnFavbyzUTW8U8+XeLQjh/NhktiLpauaxH0Oh6r66WOXrDYFi8/QWxdcOhb6WRomYidnxTeNrxQDUp59Vplg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@remix-run/server-runtime': ^2.9.2
+
+  '@netlify/serverless-functions-api@1.35.0':
+    resolution: {integrity: sha512-BH9eF3s7bUbqkcEUMR7dne/iCXSpZD10KVkGcs53eDrON5pKxsMdXvrdAx/q0HD24vJgHXGXObGSr5sjPllGEA==}
+    engines: {node: '>=18.0.0'}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2215,6 +2268,10 @@ packages:
 
   isbot@4.4.0:
     resolution: {integrity: sha512-8ZvOWUA68kyJO4hHJdWjyreq7TYNWTS9y15IzeqVdKxR9pPr3P/3r9AHcoIv9M0Rllkao5qWz2v1lmcyKIVCzQ==}
+    engines: {node: '>=18'}
+
+  isbot@5.1.23:
+    resolution: {integrity: sha512-ie3ehy2iXdkuzaZx32SoKb9b8l9Cm8cqQ1lJjQXnq8GRTrk/Jx7IUDcB4mhlw6H3gWaMqGYoWeV0lPv1P/20Ig==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -4220,6 +4277,58 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@netlify/edge-functions@2.11.1': {}
+
+  '@netlify/functions@3.0.1':
+    dependencies:
+      '@netlify/serverless-functions-api': 1.35.0
+
+  '@netlify/remix-adapter@2.6.0(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))':
+    dependencies:
+      '@remix-run/node': 2.16.0(typescript@5.8.2)
+      isbot: 5.1.23
+    optionalDependencies:
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+    transitivePeerDependencies:
+      - typescript
+
+  '@netlify/remix-edge-adapter@3.4.2(@remix-run/react@2.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2))(@remix-run/serve@2.16.0(typescript@5.8.2))(@remix-run/server-runtime@2.16.0(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)':
+    dependencies:
+      '@netlify/remix-runtime': 2.3.1(@remix-run/server-runtime@2.16.0(typescript@5.8.2))
+      '@remix-run/dev': 2.16.0(@remix-run/react@2.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2))(@remix-run/serve@2.16.0(typescript@5.8.2))(@types/node@22.13.10)(jiti@1.21.7)(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0))(yaml@2.7.0)
+      isbot: 5.1.23
+    optionalDependencies:
+      vite: 6.2.1(@types/node@22.13.10)(jiti@1.21.7)(yaml@2.7.0)
+    transitivePeerDependencies:
+      - '@remix-run/react'
+      - '@remix-run/serve'
+      - '@remix-run/server-runtime'
+      - '@types/node'
+      - babel-plugin-macros
+      - bluebird
+      - bufferutil
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - ts-node
+      - tsx
+      - typescript
+      - utf-8-validate
+      - wrangler
+      - yaml
+
+  '@netlify/remix-runtime@2.3.1(@remix-run/server-runtime@2.16.0(typescript@5.8.2))':
+    dependencies:
+      '@remix-run/server-runtime': 2.16.0(typescript@5.8.2)
+
+  '@netlify/serverless-functions-api@1.35.0': {}
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -6102,6 +6211,8 @@ snapshots:
   isarray@2.0.5: {}
 
   isbot@4.4.0: {}
+
+  isbot@5.1.23: {}
 
   isexe@2.0.0: {}
 
