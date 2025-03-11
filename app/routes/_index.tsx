@@ -13,6 +13,8 @@ import {
 import { IconContext } from "react-icons";
 import { ServiceCard } from "~/components/ServiceCard";
 import { Footer } from "~/components/Footer";
+import { MdVisibility } from "react-icons/md";
+import { GiTargetShot } from "react-icons/gi";
 
 export const meta: MetaFunction = () => {
   return [
@@ -121,6 +123,108 @@ export default function Index() {
         </div>
       </header>
 
+      {/* About section */}
+      <div className="w-full px-4 sm:px-8 py-16 flex flex-col md:flex-row gap-12">
+        <div className="w-full aspect-[3/1.5] relative">
+          <div
+            className="w-3/5 md h-[70%] aspect-[3/4] rounded-xl
+             absolute top-0 left-0 bg-yellow-800/85"
+            style={{
+              backgroundImage: `url(${backgroundImages[0]})`,
+              backgroundSize: "cover",
+              objectFit: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          <div
+            className="w-3/5 h-[70%] aspect-[3/4] rounded-xl
+             absolute bottom-0 right-0 bg-yellow-800/85"
+            style={{
+              backgroundImage: `url(${backgroundImages[3]})`,
+              backgroundSize: "cover",
+              objectFit: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+        </div>
+        <div
+          className="w-full flex flex-col md:flex-row items-center
+          justify-center gap-4"
+        >
+          <div className="w-full flex flex-col gap-4">
+            <p className="flex items-center gap-2">
+              <span>
+                <IconContext.Provider
+                  value={{
+                    size: "1.4rem",
+                    color: "#a16207",
+                  }}
+                >
+                  <FaBuilding />
+                </IconContext.Provider>
+              </span>
+              <span className="text-yellow-700 text-xl font-semibold">
+                About Us
+              </span>
+            </p>
+            <p>
+              Mpoza Holdings (U) Limited is a diversified company dedicated to
+              excellence in energy, construction, and manufacturing. Based in
+              Uganda, we are committed to delivering sustainable and innovative
+              solutions that meet the needs of our clients while advancing
+              global sustainability goals.
+            </p>
+          </div>
+          <div
+            className="w-full flex flex-col sm:flex-rows justify-center
+             items-center sm:items-start gap-4"
+          >
+            <div className="w-full flex flex-col gap-4">
+              <p className="flex items-center gap-2">
+                <span>
+                  <IconContext.Provider
+                    value={{
+                      size: "1.4rem",
+                      color: "#a16207",
+                    }}
+                  >
+                    <MdVisibility />
+                  </IconContext.Provider>
+                </span>
+                <span className="text-yellow-700 text-xl font-semibold">
+                  Vision
+                </span>
+              </p>
+              <p>
+                To be a leading provider of sustainable business solutions,
+                transforming industries and empowering communities globally.
+              </p>
+            </div>
+            <div className="w-full flex flex-col gap-4">
+              <p className="flex items-center gap-2">
+                <span>
+                  <IconContext.Provider
+                    value={{
+                      size: "1.4rem",
+                      color: "#a16207",
+                    }}
+                  >
+                    <GiTargetShot />
+                  </IconContext.Provider>
+                </span>
+                <span className="text-yellow-700 text-xl font-semibold">
+                  Mission
+                </span>
+              </p>
+              <p>
+                To drive growth and innovation through quality service delivery,
+                environmental stewardship, and strategic partnerships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* services */}
       <div
         className="px-4 sm:px-8 py-16 flex flex-col items-center justify-center
@@ -132,7 +236,7 @@ export default function Index() {
           </p>
           <p
             className="text-yellow-700 font-semibold uppercase
-              text-center absolute top-[10px] left-0 right-0 z-0"
+              text-center absolute top-[12px] left-0 right-0 z-0"
           >
             Our services
           </p>
