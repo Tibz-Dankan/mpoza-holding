@@ -228,8 +228,8 @@ export default function Index() {
 
       {/* services */}
       <div
-        className="px-4 sm:px-8 py-16 flex flex-col items-center justify-center
-         text-lg gap-12 w-full"
+        className="px-4 sm:px-8 py-8 pt-6 flex flex-col items-center justify-center
+         text-lg gap-8 w-full bg-gray-100"
       >
         <div className="w-full flex flex-col items-center justify-center gap-2">
           <p className="text-yellow-700 font-semibold uppercase text-center">
