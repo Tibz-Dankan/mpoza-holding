@@ -15,6 +15,8 @@ import { ServiceCard } from "~/components/ServiceCard";
 import { Footer } from "~/components/Footer";
 import { MdVisibility } from "react-icons/md";
 import { GiTargetShot } from "react-icons/gi";
+import { Slide } from "react-slideshow-image";
+import { Row } from "react-bootstrap";
 import { TriangularLikeIcon } from "~/components/TriangularLikeIcon";
 import { Gallery } from "~/components/Gallery";
 import { Sidebar } from "~/components/Sidebar";
@@ -35,6 +37,16 @@ export default function Index() {
     "images/track.png",
     "images/tractor.png",
     "images/tractors.png",
+  ];
+
+  const breakpoints = [
+    {
+      breakpoint: 1,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
   ];
 
   return (
@@ -122,15 +134,42 @@ export default function Index() {
               </Link>
             </div>
           </div>
-          <div className="w-full h-full py-4 hidden sm:block">
-            <img
-              src={backgroundImages[4]}
-              className="object-cover bg-center w-full h-full"
-              style={{
-                clipPath:
-                  "polygon(0% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 0% 100%, 10% 50%)",
-              }}
-            />
+
+          {/* Hero section image slider */}
+          <div
+            className="w-full h-full py-4 hidden sm:block"
+            style={{
+              clipPath:
+                "polygon(0% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 0% 100%, 10% 50%)",
+            }}
+          >
+            <Row className="w-fulls w-[50vw] h-full">
+              <Slide
+                arrows={true}
+                duration={4000}
+                indicators={false}
+                responsive={breakpoints}
+                autoplay={true}
+                defaultIndex={0}
+                nextArrow={<button className="hidden"></button>}
+                prevArrow={<button className="hidden"></button>}
+              >
+                {backgroundImages.map((image, index) => (
+                  <div key={index} className="each-slide-effect w-full h-full">
+                    <div
+                      className="w-full h-full aspect-[4/2.88] bg-yellow-800/85 shadow-md"
+                      style={{
+                        backgroundImage: `url(${image})`,
+                        backgroundSize: "cover",
+                        objectFit: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center center",
+                      }}
+                    />
+                  </div>
+                ))}
+              </Slide>
+            </Row>
           </div>
         </div>
       </header>
