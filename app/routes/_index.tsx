@@ -67,9 +67,7 @@ export default function Index() {
                 >
                   {contact.icon}
                 </span>
-                <span className="text-blue-700 font-lights">
-                  {contact.text}
-                </span>
+                <span className="text-blue-700">{contact.text}</span>
               </div>
             ))}
           </div>
@@ -105,7 +103,7 @@ export default function Index() {
               </h4>
               <Link
                 to="/contact"
-                className="text-lg bg-yellow-500 inline-block w-32 text-center
+                className="text-lg bg-yellow-600 inline-block w-32 text-center
                  px-4 py-2 text-white rounded-3xl"
               >
                 Contact Us
