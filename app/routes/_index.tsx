@@ -16,6 +16,7 @@ import { Footer } from "~/components/Footer";
 import { MdVisibility } from "react-icons/md";
 import { GiTargetShot } from "react-icons/gi";
 import { TriangularLikeIcon } from "~/components/TriangularLikeIcon";
+import { Gallery } from "~/components/Gallery";
 
 export const meta: MetaFunction = () => {
   return [
@@ -164,7 +165,7 @@ export default function Index() {
                   <FaBuilding />
                 </IconContext.Provider>
               </span>
-              <span className="text-yellow-700 text-xl font-semibold">
+              <span className="text-yellow-700 italic text-xl font-semibold">
                 About Us
               </span>
             </p>
@@ -192,7 +193,7 @@ export default function Index() {
                     <MdVisibility />
                   </IconContext.Provider>
                 </span>
-                <span className="text-yellow-700 text-xl font-semibold">
+                <span className="text-yellow-700 italic text-xl font-semibold">
                   Vision
                 </span>
               </p>
@@ -213,7 +214,7 @@ export default function Index() {
                     <GiTargetShot />
                   </IconContext.Provider>
                 </span>
-                <span className="text-yellow-700 text-xl font-semibold">
+                <span className="text-yellow-700 italic text-xl font-semibold">
                   Mission
                 </span>
               </p>
@@ -232,7 +233,7 @@ export default function Index() {
          text-lg gap-8 w-full bg-gray-100"
       >
         <div className="w-full flex flex-col items-center justify-center gap-2">
-          <p className="text-yellow-700 font-semibold uppercase text-center">
+          <p className="text-yellow-600 text-xl italic font-semibold  text-center">
             Our services
           </p>
           <TriangularLikeIcon />
@@ -248,9 +249,25 @@ export default function Index() {
           ))}
         </div>
       </div>
+
       {/* Gallery */}
+      <div
+        className="px-4 sm:px-8 py-8 pt-6 flex flex-col items-center justify-center
+         gap-8 w-full"
+      >
+        <div className="w-full flex flex-col items-center justify-center gap-2">
+          <p className="flex flex-col font-semibold text-center">
+            <span className="text-yellow-900 text-base">Explore Our</span>
+            <span className="text-yellow-600 text-xl italic">Gallery</span>
+          </p>
+          <TriangularLikeIcon />
+        </div>
+        <div className="w-full">
+          <Gallery />
+        </div>
+      </div>
       {/* Footer */}
-      <div>
+      <div className="mt-8">
         <Footer />
       </div>
     </div>
