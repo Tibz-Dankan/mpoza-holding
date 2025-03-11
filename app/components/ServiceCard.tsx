@@ -9,10 +9,7 @@ type ServiceCardProps = React.HTMLAttributes<HTMLDivElement> & {
 export const ServiceCard: React.FC<ServiceCardProps> = (props) => {
   return (
     <Fragment>
-      <div
-        className="bg-white rounded-md border-[1px] border-gray-200 p-6 
-         space-y-4 w-full h-auto shadow-md"
-      >
+      <div className="bg-white rounded-md p-6 space-y-4 w-full h-auto shadow-md">
         <div className="grid place-items-center items-start">
           <span
             className="w-14 h-14 bg-yellow-600 rounded-[50%]
