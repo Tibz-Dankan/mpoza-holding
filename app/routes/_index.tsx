@@ -15,6 +15,7 @@ import { ServiceCard } from "~/components/ServiceCard";
 import { Footer } from "~/components/Footer";
 import { MdVisibility } from "react-icons/md";
 import { GiTargetShot } from "react-icons/gi";
+import { TriangularLikeIcon } from "~/components/TriangularLikeIcon";
 
 export const meta: MetaFunction = () => {
   return [
@@ -230,16 +231,11 @@ export default function Index() {
         className="px-4 sm:px-8 py-16 flex flex-col items-center justify-center
          text-lg gap-12 w-full"
       >
-        <div className="w-full text-center relative bg-transparent z-20">
-          <p className="uppercase text-gray-800 font-semibold text-5xl opacity-10">
+        <div className="w-full flex flex-col items-center justify-center gap-2">
+          <p className="text-yellow-700 font-semibold uppercase text-center">
             Our services
           </p>
-          <p
-            className="text-yellow-700 font-semibold uppercase
-              text-center absolute top-[12px] left-0 right-0 z-0"
-          >
-            Our services
-          </p>
+          <TriangularLikeIcon />
         </div>
         <div className="w-full gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {constructionServices.map((service, index) => (
