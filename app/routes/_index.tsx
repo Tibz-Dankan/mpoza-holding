@@ -55,14 +55,12 @@ export default function Index() {
       <Sidebar />
       {/* Header */}
       <header
-        className="w-full h-screen flex flex-col"
+        className="w-full h-[80vh] sm:h-screen flex flex-col"
         style={{
           backgroundImage: `url(${backgroundImages[4]})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          width: "100%",
-          height: "100vh",
         }}
       >
         {/* Top Bar */}
@@ -143,7 +141,7 @@ export default function Index() {
                 "polygon(0% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 0% 100%, 10% 50%)",
             }}
           >
-            <Row className="w-fulls w-[50vw] h-full">
+            <Row className="w-[50vw] h-full">
               <Slide
                 arrows={true}
                 duration={4000}
@@ -157,7 +155,7 @@ export default function Index() {
                 {backgroundImages.map((image, index) => (
                   <div key={index} className="each-slide-effect w-full h-full">
                     <div
-                      className="w-full h-full aspect-[4/2.88] bg-yellow-800/85 shadow-md"
+                      className="w-full h-[80vh] aspect-[1/1] bg-yellow-800/85 shadow-md"
                       style={{
                         backgroundImage: `url(${image})`,
                         backgroundSize: "cover",
