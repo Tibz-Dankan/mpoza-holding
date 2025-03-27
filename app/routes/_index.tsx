@@ -102,7 +102,7 @@ export default function Index() {
             <Link to="/about">About Us</Link>
             <Link to="/services">Services</Link>
             <Link to="/gallery">Gallery</Link>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact-us">Contact Us</Link>
           </div>
         </nav>
 
@@ -124,7 +124,7 @@ export default function Index() {
                 precision, exceptional expertise, and groundbreaking innovation.
               </h4>
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="text-lg bg-yellow-600 inline-block w-32 text-center
                  px-4 py-2 text-white rounded-3xl self-center sm:self-auto"
               >

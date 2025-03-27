@@ -6,6 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import { Providers } from "./providers";
 
 import "./tailwind.css";
 import "react-slideshow-image/dist/styles.css";
@@ -42,5 +43,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <Providers>
+      <Outlet />
+    </Providers>
+  );
 }
