@@ -30,7 +30,7 @@ export const Sidebar: React.FC = () => {
         <Link to="/about">About Us</Link>
         <Link to="/services">Services</Link>
         <Link to="/gallery">Gallery</Link>
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/contact-us">Contact Us</Link>
       </div>
       <div
         className="w-full border-t-[1px] border-gray-400 p-4
